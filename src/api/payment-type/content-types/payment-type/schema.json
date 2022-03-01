@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_types",
+  "info": {
+    "singularName": "payment-type",
+    "pluralName": "payment-types",
+    "displayName": "PaymentTypes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "pluginOptions": {},
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "payment_type"
+    }
+  }
+}

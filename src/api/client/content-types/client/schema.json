@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Clients",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FirstName": {
+      "type": "string",
+      "required": true
+    },
+    "MiddleName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Comment": {
+      "type": "text"
+    },
+    "PhoneNumber": {
+      "type": "string",
+      "regex": "^\\d{11}",
+      "maxLength": 11,
+      "minLength": 11
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "client"
+    }
+  }
+}
